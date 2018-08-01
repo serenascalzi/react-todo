@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "name": "Finish Homework",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "name": "Take Out Trash",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "name": "Launder Clothes",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "name": "Shop for Groceries",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "name": "Read Book",
+      "completed": false,
+      "id": 5
+    }
+  ]
+}
