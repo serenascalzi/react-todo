@@ -1,39 +1,25 @@
 import React, { Component } from 'react'
 import './App.css'
-import {addTodo} from './actions/list'
-import ToDoList from './ToDoList'
-import store from './store'
+import {getTodos} from './actions/listActions'
 import {Provider} from 'react-redux'
+import store from './store'
+import ToDoForm from './ToDoForm'
+import ToDoList from './ToDoList'
+import ToDoFilter from './ToDoFilter'
 
 class App extends Component {
-  state = {
-  	todo:''
-  }
 
-  handleSubmit = (e) => {
-  	e.preventDefault()
-  	addTodo(this.state.todo)
-    this.setState({
-      todo:''
-    })
-  }
-
-  handleChange = (e) => {
-  	this.setState({
-  		todo: e.target.value
-  	})
+  componentDidMount() {
+    getTodos()
   }
 
   render() {
     return (
       <Provider store={store}>
         <div>
-          <h1>To Do List</h1>
-          <form onSubmit={this.handleSubmit}>
-          	<input type="text" name="todo" placeholder="What needs to be done?" value={this.state.todo} onChange={this.handleChange} />
-          	<button type="submit">+</button>
-          </form>
+          <ToDoForm />
           <ToDoList />
+          <ToDoFilter />
         </div>
       </Provider>
     )
